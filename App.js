@@ -22,7 +22,7 @@ import { useState, useEffect } from 'react';
 import moment from "moment";
 import { StyleSheet, Text, View, FlatList, ImageBackground, SafeAreaView,TextInput,Image,} from 'react-native';
 
-const imageOne = { uri: "https://wallpaperaccess.com/full/12569.jpg" };
+const imageOne = { uri: "https://iphoneswallpapers.com/wp-content/uploads/2019/01/Mountain-HD-Forest-iPhone-Wallpaper.jpg" };
 
 export default function App() {
 
@@ -37,7 +37,7 @@ const [daily, setDaily] = useState([{temp:{max:"0"}, weather: [{icon: "10d"}]}, 
 const [open, setOpen] = useState(true);
 
 useEffect(() => {
-  const geoLocation = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyBai2aRjTpJEvvDMqjhU6kcVv_Y2M9CNiQ"
+  const geoLocation = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key="KEY"
   fetch(geoLocation)
   .then(response => response.json())
   .then(data => {
@@ -51,7 +51,7 @@ useEffect(() => {
 
 
 useEffect(() => {
-  const weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat="+cords.lat+"&lon="+cords.lng+"&appid=27602453a9225f51de335289155da1a8&units=imperial"
+  const weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat="+cords.lat+"&lon="+cords.lng+"&appid="ID"&units=imperial"
   fetch(weatherAPI)
   .then((response) => response.json())
   .then((result) => {
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     flex: 0.08,
     //backgroundColor: "red",
     width: "100%",
-    marginTop: 10
+    marginTop: 0
   },
   cityInput: {
     width: "100%",
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     //backgroundColor: "black",
     marginLeft: 10,
-    marginTop: 12
+    marginTop: 0
   },
   topContainer:{
     flex: 0.4,
